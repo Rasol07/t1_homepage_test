@@ -96,6 +96,10 @@ body {
     display : none;
 }
 
+.content-list-data {
+    margin-bottom: 100px;
+}
+
 .content-list-item:first-child {
     display : block;
 }
@@ -235,4 +239,92 @@ body {
 
 .user-name {
     color : white;
+}
+
+.emoji-wrapper {
+    width : 100%;
+    display : flex;
+    flex-wrap : wrap; /* 줄바꿈 자체를 허용하겠다. */
+    gap : 14px;
+    align-items: center;
+}
+
+.emoji {
+    display : flex;
+    gap : 2px;
+    flex : 0 0 calc(12.5% - 14px);
+    padding : 2px;
+    padding-left : 4px;
+    padding-right : 4px;
+    align-items: center;
+
+    background-color:  rgba(211, 211, 211, 0.156);
+    border-radius: 30px;
+    box-shadow : 0 0 6px 2px rgba(157, 157, 157, 0.404);
+
+    color : white;
+    font-family: 'Pretendard';
+    font-weight: 400;
+    font-size: 11px;
+    cursor : pointer;
+}
+
+.emoji-img {
+    font-size : 16px;
+    margin-right : 5px;
+}
+
+.emoji-sum {
+    
+    align-items: center;
+    height : 100%;
+}
+
+.emoji-plus {
+    height : 100%;
+    width :fit-content;
+    padding : 10px;
+    display : flex;
+    align-items: center;
+    position: relative;
+
+    background-color:  rgba(211, 211, 211, 0.156);
+    box-shadow : 0 0 6px 2px rgba(157, 157, 157, 0.404);
+    border-radius: 50px;
+
+    cursor : pointer;
+}
+
+.emoji-plus i {
+    font-size: 14px;
+    color : rgba(211, 211, 211, 0.578);
+}
+
+.emoji-addition {
+    
+    flex-wrap: wrap;
+    
+    align-items: center;
+    justify-content: space-evenly;
+    padding : 8px;
+    position: absolute;
+    width : 20vw;
+    top : -113px;
+    left : -76px;
+    background-color:  rgb(49, 49, 49);
+    box-shadow : 0 0 4px 1px rgba(157, 157, 157, 0.404);
+    border-radius : 20px;
+    
+    z-index : 20;
+    display : none;
+}
+
+.emoji-exam {
+    flex : 0 0 calc(18%);
+    font-size : 25px;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    line-height: 1.7;
+    
 }
