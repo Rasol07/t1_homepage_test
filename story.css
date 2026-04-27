@@ -61,6 +61,8 @@ body {
     color : white;
     display : flex;
     gap : 13px;
+
+    cursor : pointer;
 }
 
 .member-list-item img{
@@ -254,8 +256,8 @@ body {
     gap : 2px;
     flex : 0 0 calc(12.5% - 14px);
     padding : 2px;
-    padding-left : 4px;
-    padding-right : 4px;
+    padding-left : 6px;
+    padding-right : 6px;
     align-items: center;
 
     background-color:  rgba(211, 211, 211, 0.156);
@@ -267,6 +269,11 @@ body {
     font-weight: 400;
     font-size: 11px;
     cursor : pointer;
+    transition: background-color 0.3s ease-in;
+}
+
+.emoji.active {
+    background-color: rgba(237, 237, 237, 0.532);
 }
 
 .emoji-img {
