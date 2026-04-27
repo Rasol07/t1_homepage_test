@@ -1,0 +1,238 @@
+body {
+    background-color: black;
+}
+
+.page-not-use {
+    color : rgb(171, 171, 171) !important;
+}
+
+.main-nav {
+    padding-left : 9%;
+    padding-right : 9%;
+    padding-top: 7px;
+    background-color: black;
+    position: absolute;
+}
+
+.navbar-nav .nav-item .nav-link {
+    font-weight : 600 !important;
+    font-size : 13px !important;
+}
+
+.navbar-brand i {
+    color : white;
+    font-size : 20px;
+    text-align: center;
+}
+
+.nav-detail {
+    position: fixed;
+    width : 100%;
+    z-index : 5;
+    
+}
+
+.comment {
+    width : 200px;
+    height : 100px;
+    overflow-y: scroll;
+    color : white;
+}
+
+.story-container {
+    display : flex; 
+    /* 이렇게 하면 자동으로 가로 배치를 함 */
+    justify-content: space-between; /* 양쪽 끝으로 박스 배치 */
+    /* margin-top: 10%;
+    와 이렇게 쓰니까... 부모까지 같이 벽이 없으면 합쳐서 작동해버림... */
+    padding-top : 10%;
+}
+
+.member-list {
+    padding-left : 11%;
+    width : 40%;
+    position: sticky;
+    top : 22%;
+    height : fit-content;
+}
+
+.member-list-item{
+    margin-bottom : 2vw;
+    color : white;
+    display : flex;
+    gap : 13px;
+}
+
+.member-list-item img{
+    width : 40px;
+    height : 40px;
+    border-radius: 25px;
+    object-fit: cover;
+    object-position: center;
+}
+
+.member-list-item span {
+    font-family: 'Pretendard';
+    font-size : 16px;
+    font-weight: 400;
+    align-content: center; 
+    /* align-content와 align-item의 차이가 뭘까 */
+}
+
+.nothing-img {
+    width : 40px;
+    height : 40px;
+    border-radius: 25px;
+    background : linear-gradient(30deg, rgb(104, 255, 159), rgb(173, 110, 232)); 
+    /* 기본으로 하면 위에서 아래로 됨. 각도 45deg 이런 식으로도 넣을 수 있음. */
+}
+
+.content-list {
+    padding-right : 11%;
+    width : 60%;
+}
+
+.content-list-item{
+    display : none;
+}
+
+.content-list-item:first-child {
+    display : block;
+}
+
+.content-header {
+    display : flex;
+}
+
+.name {
+    flex : 3;
+    display : flex;
+    gap : 13px;
+}
+
+.name img {
+    width : 40px;
+    height : 40px;
+    border-radius: 25px;
+    object-fit: cover;
+    object-position: center;
+}
+
+.name span {
+    font-family: 'Pretendard';
+    font-size : 18px;
+    font-weight: 600;
+    color : white;
+    align-content: center; 
+    /* align-content와 align-item의 차이가 뭘까 */
+}
+.more-menu-wrapper {
+    align-content: center;
+    position: relative;
+}
+
+.more-menu-wrapper i {
+    color : white;
+    font-size: 18px;
+    cursor : pointer;
+}
+
+.etc-menu {
+    position: absolute; /* 레이아웃 무시하는 거 fixed랑 무슨 차이일까 */
+    top : -60px;
+    right : 0;
+    width : 20vw;
+    padding : 15px;
+    padding-left : 20px;
+    background-color: rgb(45, 45, 45);
+    border : 1px solid rgb(73, 73, 73);
+    border-radius : 8px;
+    z-index : 50;
+
+    display : none;
+}
+
+.etc-menu span {
+    color : white;
+    font-family: 'Pretendard';
+    font-weight : 400;
+    font-size : 14px;
+    text-align: center;
+    display : flex; /* 아니 만능임? flex에 대해서 좀 더 알아봐야할 것 같음 */
+}
+
+.content-img {
+    width : 100%;
+    height : 100vh;
+    margin-top : 20px;
+    background-color: rgb(27, 27, 27);
+    border-radius: 8px;
+    display : flex;
+    justify-content: center;
+}
+
+.content-img img {
+    width : 80%;
+    height : 100%;
+    object-fit : cover;
+    align-content: center;
+    object-position: center;
+}
+
+.content {
+    width : 100%;
+    padding-top : 2vw;
+    
+}
+
+.content-paragraph {
+    color : white;
+    font-family: 'Pretendard';
+    font-weight : 400;
+    font-size : 14px;
+    line-height : 2.0; /* 줄 간격 자체를 늘림 */
+}
+
+.content-info {
+    display : flex;
+    gap : 10px;
+    align-items: center;
+    color : rgba(211, 211, 211, 0.578);
+}
+
+.time-pass, .emoji-count, .comment-count {
+    font-family: 'Pretendard';
+    font-size : 12px;
+    font-weight : 400;
+}
+
+.comments {
+    width : 100%;
+    height : 9vh;
+    display : flex;
+    align-items: center;
+    gap : 8px;
+}
+
+.comments img {
+    width : 20px;
+    height : 20px;
+    border-radius: 25px;
+    object-fit: cover;
+    object-position: center;
+}
+
+.font {
+    font-family: 'Pretendard';
+    font-size : 14px;
+    font-weight : 400;
+}
+
+.best-comment {
+    color :  rgba(211, 211, 211, 0.578);
+    font-size : 12px;
+}
+
+.user-name {
+    color : white;
+}
