@@ -283,3 +283,25 @@ html -> viewport가 기준점 (fixed와 같다)
 .twitter-next-button {
     right : 0vw;
 }
+
+.up-button {
+    display : flex;
+    position: fixed;
+    bottom : 8%;
+    right : 9%;
+    width : 40px;
+    height : 40px;
+    padding : 10px;
+
+    align-items: center;
+    justify-content: center;
+    
+    background-color:  rgb(58, 58, 58);
+    border-radius: 50px;
+    /* box-shadow: 0 0 3px 1px rgb(56, 56, 56); */
+    color : white;
+    font-size : 12px;
+    cursor : pointer;
+    z-index: 40;
+    
+}
