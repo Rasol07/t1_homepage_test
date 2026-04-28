@@ -6,6 +6,9 @@ $('.member-list-item').click(function(){
     // 저 인덱스 값을 .content-list-item index를 show하면 됨
     $('.content-list-item').hide();
 
+    window.scrollTo({
+        top : 0
+    });
     $('.content-list-item').eq(index).show();
 })
 
@@ -25,6 +28,7 @@ $('.member-list-item').click(function(){
 // 이런 식의 개인적인 하나 하나의 반복적인 작업에선
 // this 를 쓰면 편하구나~
 
+// etc 버튼 눌렀을 떄
 $('.etc-icon').click(function(){
     let target = $(this).siblings('.etc-menu');
     target.toggle();
@@ -49,6 +53,8 @@ $(document).on('click', '.emoji', function() {
     
 })
 
+
+// 이모지 박스 추가 버튼 눌렀을 때
 $('.emoji-plus').click(function(){
     let target = $(this).find('.emoji-addition');
     if(target.css('display') === 'none') {

@@ -43,6 +43,35 @@ index해서 그 값 저장하고
 
 다시 eq로 하는 거.
 
+## 날마다 생각나서 공부한 것들 모음
 ### 4월 28일 생각난 거
 - 맨 위로 올라가는 버튼 만들기
 - 스크롤 관련 행동들 만들기
+
+- 스크롤 관련
+ window -> 창 관련이니까
+ scrollTo -> 메서드 
+ 윈도우 이동 어느정도로 할건지에 있음.
+ 이동 관련 메서드
+ scrollY, scrollX : 스크롤 수치 확인 가능.
+ window로 하면 가능하겠다.
+
+ - 스크롤 인식해서 창 닫히게 하는 것도 구현해야함
+
+ ### => 관련
+ function() 을 ()=> 로 대체해서 작성
+ this 에서의 차이가 존재한다.
+ 자신만의 this가 아닌 상위의 this를 물려받는다.
+
+ ### linear-gradient
+ linear-gradient 경우는 background 로 작업
+ lienadr-gradient(방향(deg), 색1, 차지 정도, 색 2, 차지 정도) 이런 식으로 표현이 가능하다
+
+### setInterval
+시간마다 작동되는 것 구현
+setInterval(function(), ms단위)
+ms단위에 따라 진행될 function을 넣어둠
+이걸 변수로 해서 집어넣는 것도 가능
+멈추려면 clearInterval(setInterval 변수) 이런 식으로 해서 멈추게 할 수 있다.
+## 공부 추가
+- span 태그랑 p 태그 차이 

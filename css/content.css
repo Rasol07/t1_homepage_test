@@ -1,0 +1,133 @@
+body {
+    background-color: black;
+}
+
+.page-not-use {
+    color : rgb(171, 171, 171) !important;
+}
+
+.main-nav {
+    padding-left : 9%;
+    padding-right : 9%;
+    padding-top: 7px;
+    background-color: black;
+    position: absolute;
+    z-index : 100;
+}
+
+.navbar-nav .nav-item .nav-link {
+    font-weight : 600 !important;
+    font-size : 13px !important;
+}
+
+.navbar-brand i {
+    color : white;
+    font-size : 20px;
+    text-align: center;
+}
+
+.nav-detail {
+    position: fixed;
+    width : 100%;
+    z-index : 100;
+    
+}
+
+.main-container {
+    padding : 7%;
+    padding-top : 5%;
+}
+
+.thumbnail-wrapper {
+    width : 100%;
+    height : 100%;
+    
+    position: relative;
+    overflow: hidden;
+}
+
+
+.thumbnail-track{
+    display : flex;
+    flex-wrap : nowrap;
+    transition: transform 0.3s ease;
+}
+
+.button {
+    position: absolute;
+    top : 50%;
+
+    width : 40px;
+    height : 40px;
+    padding : 5px;
+
+    display : flex;
+    align-items: center;
+    justify-content: center;
+    background-color:  rgba(75, 75, 75, 0.789);
+    border-radius: 25px;
+
+    color : white;
+    font-size: 11px;
+    z-index : 30;
+    cursor: pointer;
+}
+
+.thumbnail-container {
+    flex : 0 0 100%;
+    width : 100%;
+    height : 100%;
+    position: relative;
+
+}
+
+
+
+.left-button {
+    left : 2%;
+}
+
+.right-button {
+    right : 2%;
+}
+
+.thumbnail-container img {
+    width : 100%;
+    height : 84vh;
+    object-fit: cover;
+    object-position: center;
+    
+}
+
+.thumbnail-header {
+    position:absolute;
+    top : 0px;
+    
+    z-index : 10;
+    padding: 7%;
+    margin-top: 3%;
+}
+
+.shadow {
+    height : 100%;
+    width : 50%;
+    position: absolute;
+    top:0px;
+    background : linear-gradient(to right, rgb(0, 0, 0), 70%, rgba(65, 65, 65, 0));
+    z-index: 5;
+}
+
+.title {
+    color : rgb(182, 182, 182);
+    font-family: 'Pretendard';
+    font-weight : 600;
+    font-size : 18px;
+}
+
+.sub-title {
+    color : white;
+    font-weight: 700;
+    font-size : 28px;
+    line-height : 1.8;
+    letter-spacing: -0.05em;
+}
