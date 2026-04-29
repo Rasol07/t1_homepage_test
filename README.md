@@ -45,8 +45,8 @@ index해서 그 값 저장하고
 
 ## 날마다 생각나서 공부한 것들 모음
 ### 4월 28일 생각난 거
-- 맨 위로 올라가는 버튼 만들기
-- 스크롤 관련 행동들 만들기
+~~- 맨 위로 올라가는 버튼 만들기~~
+~~- 스크롤 관련 행동들 만들기~~
 
 - 스크롤 관련
  window -> 창 관련이니까
@@ -58,20 +58,38 @@ index해서 그 값 저장하고
 
  - 스크롤 인식해서 창 닫히게 하는 것도 구현해야함
 
- ### => 관련
+ #### => 관련
  function() 을 ()=> 로 대체해서 작성
  this 에서의 차이가 존재한다.
  자신만의 this가 아닌 상위의 this를 물려받는다.
 
- ### linear-gradient
+ #### linear-gradient
  linear-gradient 경우는 background 로 작업
  lienadr-gradient(방향(deg), 색1, 차지 정도, 색 2, 차지 정도) 이런 식으로 표현이 가능하다
 
-### setInterval
+#### setInterval
 시간마다 작동되는 것 구현
 setInterval(function(), ms단위)
 ms단위에 따라 진행될 function을 넣어둠
 이걸 변수로 해서 집어넣는 것도 가능
 멈추려면 clearInterval(setInterval 변수) 이런 식으로 해서 멈추게 할 수 있다.
+
+### 4월 29일
+~~- 중간 태그 부분 만들기~~
+- 작은 캐러셀 파트 만들기
+- 캐러셀 움직임 this로 조작하기
+
+#### span 태그에 margin / padding 안되는 이유
+
+#### scrollBy(){}
+이런 식으로 해서 translateX 이렇게 안하고 자동으로 스크롤 기능을 만들수도 있음
+개인적으론 길이 계산 안해도 되서 이것이 더 편한 것 같음
+overflow-x 와 같이 스크롤 할 방향에 대한 css적 선작업이 필요함
+
+#### 동일 버튼이 있는 경우
+버튼 각자의 forEach문으로 하나 하나의 button 잡기
+그 버튼에 대한 부모 this 로 해서 작업하면 됨
+
+
 ## 공부 추가
 - span 태그랑 p 태그 차이 

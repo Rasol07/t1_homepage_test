@@ -51,3 +51,43 @@ let autoSlide = setInterval(() => {
     }
     updateSlide();
 }, 5000)
+
+// 밑에 캐러셀 작업하기
+// 4개씩 넘어가게
+
+const contentRightButton = document.querySelectorAll('.content-right-button');
+const contentLeftButton = document.querySelectorAll('.content-left-button');
+
+// 오른쪽 클릭 이벤트는 foreach문으로 해서 반복적으로 계속 돌아가게
+contentRightButton.forEach(button => {
+    button.addEventListener('click', function() {
+        const container = this.closest('.content-carosel');
+
+        // 돌아갈 트랙이랑 이미지
+        const track = container.querySelector('.content-track');
+        const img = track.querySelectorAll('.content-img');
+
+        // 한 개의 너비 구하기
+        const itemWidth = img[0].offsetWidth + 15;
+
+        track.scrollBy({
+            left : itemWidth * 4,
+            behavior : 'smooth'
+        });
+    });
+})
+
+contentLeftButton.forEach(button => {
+    button.addEventListener('click', function() {
+        const container = this.closest('.content-carosel');
+        const track = container.querySelector('.content-track');
+        const img = track.querySelectorAll('.content-img');
+
+        const itemWidth = img[0].offsetWidth + 20;
+        
+        track.scrollBy({
+            left : -(itemWidth * 4),
+            behavior : 'smooth'
+        });
+    })
+})
