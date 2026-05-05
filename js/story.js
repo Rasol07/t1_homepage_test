@@ -48,9 +48,10 @@ const contentList = document.getElementById('contentList');
 
 characterData.forEach(data => {
     const tab = document.createElement('div'); // createElement랑 createAttribute 차이
+    const hasImg = data.tabImg !== "";
     tab.className = 'member-list-item';
     tab.innerHTML = `
-        <img src = "${data.tabImg}">
+        <img ${hasImg ? `src = ${data.tabImg}` : ""} class = "nothing-img">
         <span>${data.tabName}</span>
     `;
 
@@ -76,6 +77,7 @@ characterData.forEach(data => {
 function updateTab(data) {
     contentList.innerHTML = `
         <div class = "content-list-item">
+            <button class = "content-plus-button"> + </button>
                 <div class = "content-list-data">
                     <div class = "content-header">
                         <div class = "name">
