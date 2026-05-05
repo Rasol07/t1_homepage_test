@@ -1,0 +1,16 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "C:/Users/snoqu/Downloads/Pretendard-1.3.9/web/static/woff2"
+		},
+		{
+			"path": "C:/Users/snoqu/Downloads/Pretendard-1.3.9/web/static/woff"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "t1_homepage_test"
+	}
+}

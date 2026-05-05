@@ -1,16 +1,221 @@
-// 왼쪽 탭이랑 오른쪽 화면 맞추기
-// index() , eq() 
-$('.member-list-item').click(function(){
-    let index = $(this).index(); // 왼쪽 탭의 인덱스 가져오기
-    console.log(index);
-    // 저 인덱스 값을 .content-list-item index를 show하면 됨
-    $('.content-list-item').hide();
+// 데이터
+const characterData = [
+    {
+        id : "gugu",
+        tabName : "구구즈",
+        tabImg : "../images/char1.png",
+        contentImg : "../images/비둘기의 눈.png",
+        text : "비둘기는 자신의 눈을 알고 있는가?<br>눈 색이, 모양이 어떨지 말이다.",
+        time : "7시간 전"
+    },
+    {
+        id : "sekai",
+        tabName : "무의 세계",
+        tabImg : "../images/아닐시아.png",
+        contentImg : "../images/무의세계_메인.jpg",
+        text : "비둘기는 자신의 눈을 알고 있는가?<br>눈 색이, 모양이 어떨지 말이다.",
+        time : "7시간 전"
+    },
+    {
+        id : "goodbye",
+        tabName : "작별여행",
+        tabImg : "",
+        contentImg : "../images/비둘기의 눈.png",
+        text : "비둘기는 자신의 눈을 알고 있는가?<br>눈 색이, 모양이 어떨지 말이다.",
+        time : "7시간 전"
+    },
+    {
+        id : "star",
+        tabName : "새벽별",
+        tabImg : "../images/추인하.png",
+        contentImg : "../images/비둘기의 눈.png",
+        text : "비둘기는 자신의 눈을 알고 있는가?<br>눈 색이, 모양이 어떨지 말이다.",
+        time : "7시간 전"
+    },
+    {
+        id : "commu",
+        tabName : "각종 커뮤",
+        tabImg : "",
+        contentImg : "../images/비둘기의 눈.png",
+        text : "비둘기는 자신의 눈을 알고 있는가?<br>눈 색이, 모양이 어떨지 말이다.",
+        time : "7시간 전"
+    },
+];
 
-    window.scrollTo({
-        top : 0
-    });
-    $('.content-list-item').eq(index).show();
-})
+// 왼쪽 탭 메뉴 추가하기
+const memberList = document.getElementById('memberList');
+const contentList = document.getElementById('contentList');
+
+characterData.forEach(data => {
+    const tab = document.createElement('div'); // createElement랑 createAttribute 차이
+    tab.className = 'member-list-item';
+    tab.innerHTML = `
+        <img src = "${data.tabImg}">
+        <span>${data.tabName}</span>
+    `;
+
+    // 클릭했을 때 모습.
+    tab.onclick = () => {
+        updateTab(data);
+        window.scrollTo(
+            {
+                top : 0,
+                behavior : 'smooth'
+            }
+        );
+    }
+    
+    // 위에서 추가해야할 것의 구조를 만듦.
+    // 저런 식으로 자동으로 만들 때는 구조를 먼저 생각하고, 자식 형태 반복이면 이렇게 만든다.
+    // 아무래도 this라서 이렇게 작성하는 게 좋겠구나.
+    memberList.appendChild(tab); 
+});
+// 이런 식으로 위의 필요한 데이터들 맞춰놓고... forEach 문으로 돌려서 각 구조들 만드는 형식으로 하면 됨.
+
+// 오른쪽 탭 만들기
+function updateTab(data) {
+    contentList.innerHTML = `
+        <div class = "content-list-item">
+                <div class = "content-list-data">
+                    <div class = "content-header">
+                        <div class = "name">
+                            <img src = "${data.tabImg}">
+                            <span>${data.tabName}</span>
+                        </div>
+                        <div class = "more-menu-wrapper">
+                            <i class="fa-solid fa-ellipsis-vertical etc-icon"></i>
+                            <div class = "etc-menu">
+                                <span>링크 복사</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class = "content-img">
+                        <img src = "${data.contentImg}">
+
+                    </div>
+                    <div class = "content">
+                        <p class = "content-paragraph">
+                            ${data.text}
+                        </p>
+                    </div>
+                    <div class = "content-info">
+                        <span class = "time-pass">
+                            ${data.time}
+                        </span>
+                        <span>
+                            ·
+                        </span>
+                        <div>
+                            <i class="fa-solid fa-face-grin"></i>
+                            <span class = "emoji-count">
+                                0
+                            </span>
+                        </div>
+                        <span>
+                            ·
+                        </span>
+                        <div>
+                            <i class="fa-solid fa-comment"></i>
+                            <span class = "comment-count">
+                                0
+                            </span>
+                        </div>
+                    </div>
+                    <div class = "comments">
+                        <img src = "./images/엔닝.jpg">
+                        <span class= "font user-name">
+                            엔닝
+                        </span>
+                        <span class = "font best-comment">
+                            관련된 항목 댓글입니다.
+                        </span>
+                    </div>
+                    <div class = "emoji-wrapper">
+                        <div class = "emoji">
+                            <span class = "emoji-img">😊</span>
+                            <span class = "emoji-sum">3,219</span>
+                        </div>
+                        <div class = "emoji">
+                            <span class = "emoji-img">❤️</span>
+                            <span class = "emoji-sum">0</span>
+                        </div>
+                        <div class = "emoji">
+                            <span class = "emoji-img">👍</span>
+                            <span class = "emoji-sum">0</span>
+                        </div>
+                        <div class = "emoji">
+                            <span class = "emoji-img">😢</span>
+                            <span class = "emoji-sum">0</span>
+                        </div>
+                        <div class = "emoji">
+                            <span class = "emoji-img">😡</span>
+                            <span class = "emoji-sum">0</span>
+                        </div>
+                        <div class = "emoji">
+                            <span class = "emoji-img">🎉</span>
+                            <span class = "emoji-sum">0</span>
+                        </div>
+                        <div class = "emoji">
+                            <span class = "emoji-img">🍿</span>
+                            <span class = "emoji-sum">0</span>
+                        </div>
+                        <div class = "emoji">
+                            <span class = "emoji-img">✅</span>
+                            <span class = "emoji-sum">0</span>
+                        </div>
+                        <div class = "emoji">
+                            <span class = "emoji-img">😯</span>
+                            <span class = "emoji-sum">0</span>
+                        </div>
+                        <div class = "emoji">
+                            <span class = "emoji-img">🌸</span>
+                            <span class = "emoji-sum">0</span>
+                        </div>
+                        <div class = "emoji-plus">
+                            <i class="fa-solid fa-plus"></i>
+                            <div class = "emoji-addition">
+                                <div class = "emoji-exam">
+                                    😊
+                                </div>
+                                <div class = "emoji-exam">
+                                    ❤️
+                                </div>
+                                <div class = "emoji-exam">
+                                    👍
+                                </div>
+                                <div class = "emoji-exam">
+                                    😢
+                                </div>
+                                <div class = "emoji-exam">
+                                    😡
+                                </div>
+                                <div class = "emoji-exam">
+                                    🎉
+                                </div>
+                                <div class = "emoji-exam">
+                                    🍿
+                                </div>
+                                <div class = "emoji-exam">
+                                    ✅
+                                </div>
+                                <div class = "emoji-exam">
+                                    😯
+                                </div>
+                                <div class = "emoji-exam">
+                                    🌸
+                                </div>
+                            
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    `
+}
+
+updateTab(characterData[0]);
+
+
 
 // let clickCount = false;
 // $('.etc-icon').click(function(){
