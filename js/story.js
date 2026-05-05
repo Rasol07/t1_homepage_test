@@ -3,15 +3,15 @@ const characterData = [
     {
         id : "gugu",
         tabName : "구구즈",
-        tabImg : "../images/char1.png",
-        contentImg : "../images/비둘기의 눈.png",
+        tabImg : "images/char1.png",
+        contentImg : "images/비둘기의 눈.png",
         text : "비둘기는 자신의 눈을 알고 있는가?<br>눈 색이, 모양이 어떨지 말이다.",
         time : "7시간 전"
     },
     {
         id : "sekai",
         tabName : "무의 세계",
-        tabImg : "../images/아닐시아.png",
+        tabImg : "images/아닐시아.png",
         contentImg : "../images/무의세계_메인.jpg",
         text : "비둘기는 자신의 눈을 알고 있는가?<br>눈 색이, 모양이 어떨지 말이다.",
         time : "7시간 전"
@@ -20,15 +20,15 @@ const characterData = [
         id : "goodbye",
         tabName : "작별여행",
         tabImg : "",
-        contentImg : "../images/비둘기의 눈.png",
+        contentImg : "images/비둘기의 눈.png",
         text : "비둘기는 자신의 눈을 알고 있는가?<br>눈 색이, 모양이 어떨지 말이다.",
         time : "7시간 전"
     },
     {
         id : "star",
         tabName : "새벽별",
-        tabImg : "../images/추인하.png",
-        contentImg : "../images/비둘기의 눈.png",
+        tabImg : "images/추인하.png",
+        contentImg : "images/비둘기의 눈.png",
         text : "비둘기는 자신의 눈을 알고 있는가?<br>눈 색이, 모양이 어떨지 말이다.",
         time : "7시간 전"
     },
@@ -36,7 +36,7 @@ const characterData = [
         id : "commu",
         tabName : "각종 커뮤",
         tabImg : "",
-        contentImg : "../images/비둘기의 눈.png",
+        contentImg : "images/비둘기의 눈.png",
         text : "비둘기는 자신의 눈을 알고 있는가?<br>눈 색이, 모양이 어떨지 말이다.",
         time : "7시간 전"
     },
