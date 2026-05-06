@@ -368,3 +368,67 @@ body {
     cursor : pointer;
     
 }
+
+.write-container {
+    position: fixed;
+    width : 90%;
+    left : 5%;
+
+    /* top, right, bottom, left */
+    padding : 20px;
+    background-color: blue;
+    border-radius: 10px;
+
+}
+
+/*textarea 관련 부분*/
+.write {
+    width : 100%;
+    height : 200px;
+    margin-top : 20px;
+    font-family: 'Pretendard';
+    font-size : 14px;
+    border-radius: 10px;
+    padding : 10px;
+    resize : none; /*크기 조절 창*/
+}
+
+.file-section {
+    display : flex;
+    gap : 10px;
+}
+
+.file-button {
+    display : flex;
+    align-items: center;
+    justify-content: center;
+    cursor : pointer;
+    width : 50px;
+    height : 50px;
+    background-color: #3b3b3b;
+    border-radius : 5px;
+    font-size : 14px;
+    color : white;
+    transition: background-color 0.3s;
+}
+
+.file-button:hover {
+    background-color: #626262;
+}
+
+#preview-image {
+    width : 100%;
+    height : 100%;
+    border-radius : 5px;
+    object-fit: cover;
+}
+
+.complete-button {
+    float : right;
+    padding : 5px;
+    width : 50px;
+    font-size : 14px;
+    border : none;
+    border-radius : 5px;
+
+}
