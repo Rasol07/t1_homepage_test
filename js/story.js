@@ -213,9 +213,32 @@ function updateTab(data) {
                 </div>
             </div>
     `
+
+    const plusButton = document.querySelector('.content-plus-button');
+    plusButton.onclick = () => {
+        writeTabShow(data);
+        console.log("화면");
+    }
 }
 
 updateTab(characterData[0]);
+
+function writeTabShow(data) {
+    $('.write-container .name img').attr('src', data.tabImg);
+    $('.write-container .name span').text(data.tabName);
+
+    $('.modal-overlay').addClass('active');
+
+    // 왜 여기에 this가 들어가야 했을까
+    $(document).on('click', '#modalOverlay', function(e) {
+        if (e.target == this) {
+            $(this).removeClass('active');
+        }
+    })
+    $(document).on('click', '.complete-button', function(){
+        $('#modalOverlay').removeClass('active');
+    })
+}
 
 
 
