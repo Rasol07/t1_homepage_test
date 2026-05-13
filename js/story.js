@@ -4,47 +4,68 @@ const characterData = [
         id : "gugu",
         tabName : "구구즈",
         tabImg : "images/char1.png",
-        contentImg : "images/비둘기의 눈.png",
-        text : "비둘기는 자신의 눈을 알고 있는가?<br>눈 색이, 모양이 어떨지 말이다.",
-        time : "7시간 전"
+        posts: [
+            {
+                contentImg : "images/비둘기의 눈.png",
+                text : "비둘기는 자신의 눈을 알고 있는가?<br>눈 색이, 모양이 어떨지 말이다.",
+                time : "7시간 전"
+            }
+        ]
     },
     {
         id : "sekai",
         tabName : "무의 세계",
         tabImg : "images/아닐시아.png",
-        contentImg : "../images/무의세계_메인.jpg",
-        text : "비둘기는 자신의 눈을 알고 있는가?<br>눈 색이, 모양이 어떨지 말이다.",
-        time : "7시간 전"
+        posts: [
+            {
+                contentImg : "images/비둘기의 눈.png",
+                text : "비둘기는 자신의 눈을 알고 있는가?<br>눈 색이, 모양이 어떨지 말이다.",
+                time : "7시간 전"
+            }
+        ]
     },
     {
         id : "goodbye",
         tabName : "작별여행",
         tabImg : "",
-        contentImg : "images/비둘기의 눈.png",
-        text : "비둘기는 자신의 눈을 알고 있는가?<br>눈 색이, 모양이 어떨지 말이다.",
-        time : "7시간 전"
+        posts: [
+            {
+                contentImg : "images/비둘기의 눈.png",
+                text : "비둘기는 자신의 눈을 알고 있는가?<br>눈 색이, 모양이 어떨지 말이다.",
+                time : "7시간 전"
+            }
+        ]
     },
     {
         id : "star",
         tabName : "새벽별",
         tabImg : "images/추인하.png",
-        contentImg : "images/비둘기의 눈.png",
-        text : "비둘기는 자신의 눈을 알고 있는가?<br>눈 색이, 모양이 어떨지 말이다.",
-        time : "7시간 전"
+        posts: [
+            {
+                contentImg : "images/비둘기의 눈.png",
+                text : "비둘기는 자신의 눈을 알고 있는가?<br>눈 색이, 모양이 어떨지 말이다.",
+                time : "7시간 전"
+            }
+        ]
     },
     {
         id : "commu",
         tabName : "각종 커뮤",
         tabImg : "",
-        contentImg : "images/비둘기의 눈.png",
-        text : "비둘기는 자신의 눈을 알고 있는가?<br>눈 색이, 모양이 어떨지 말이다.",
-        time : "7시간 전"
+        posts: [
+            {
+                contentImg : "images/비둘기의 눈.png",
+                text : "비둘기는 자신의 눈을 알고 있는가?<br>눈 색이, 모양이 어떨지 말이다.",
+                time : "7시간 전"
+            }
+        ]
     },
 ];
 
 // 왼쪽 탭 메뉴 추가하기
 const memberList = document.getElementById('memberList');
 const contentList = document.getElementById('contentList');
+let currentCharacterId = "gugu";
 
 characterData.forEach(data => {
     const tab = document.createElement('div'); // createElement랑 createAttribute 차이
@@ -75,10 +96,17 @@ characterData.forEach(data => {
 
 // 오른쪽 탭 만들기
 function updateTab(data) {
-    contentList.innerHTML = `
+    // 현재 탭이 무엇인지
+    currentCharacterId = data.id;
+
+    let html = `
         <div class = "content-list-item">
             <button class = "content-plus-button"> + </button>
-                <div class = "content-list-data">
+        </div>
+    `
+    data.posts.forEach(post => {
+        html += `
+            <div class = "content-list-data">
                     <div class = "content-header">
                         <div class = "name">
                             <img src = "${data.tabImg}">
@@ -92,17 +120,17 @@ function updateTab(data) {
                         </div>
                     </div>
                     <div class = "content-img">
-                        <img src = "${data.contentImg}">
+                        <img src = "${post.contentImg}">
 
                     </div>
                     <div class = "content">
                         <p class = "content-paragraph">
-                            ${data.text}
+                            ${post.text}
                         </p>
                     </div>
                     <div class = "content-info">
                         <span class = "time-pass">
-                            ${data.time}
+                            ${post.time}
                         </span>
                         <span>
                             ·
@@ -211,8 +239,10 @@ function updateTab(data) {
                         </div>
                     </div>
                 </div>
-            </div>
-    `
+        `
+    })
+
+    contentList.innerHTML = html;
 
     const plusButton = document.querySelector('.content-plus-button');
     plusButton.onclick = () => {
@@ -226,8 +256,18 @@ updateTab(characterData[0]);
 function writeTabShow(data) {
     $('.write-container .name img').attr('src', data.tabImg);
     $('.write-container .name span').text(data.tabName);
+    $('.write').val('');
 
     $('.modal-overlay').addClass('active');
+
+    const initialID = `file-${Date.now()}`;
+    $('.file-section').html(`
+        <input type = "file" id = "${initialID}" onchange = "handleFile(this)" accept = ".jpg, .png, .jpeg, .gif" style = "display : none;">
+        <label for = "${initialID}" class = "file-button"> 
+            <span id = "plus" style = "display : block;"> + </span>
+            <img src = "" id = "preview-image" alt = "미리보기" style = "display : none;">
+        </label>
+    `);
 
     // 왜 여기에 this가 들어가야 했을까
     $(document).on('click', '#modalOverlay', function(e) {
@@ -235,9 +275,7 @@ function writeTabShow(data) {
             $(this).removeClass('active');
         }
     })
-    $(document).on('click', '.complete-button', function(){
-        $('#modalOverlay').removeClass('active');
-    })
+    
 }
 
 
