@@ -46,6 +46,36 @@
         <div class = "item member-list" id="memberList">
         </div>
 
+        <div id = "modalOverlay" class = "modal-overlay">
+                <div class = "write-container">
+                    <!-- 헤더 부분 -->
+                    <div class = "name">
+                        <img src = "images/char1.png">
+                        <span>이름</span>
+                    </div>
+
+                    <!-- 내용 작성 부분 -->
+                    <textarea class = "write" placeholder="내용을 작성하세요."></textarea>
+                    
+                    <!-- 사진 및 동영상 첨부 버튼 -->
+                    <div class="file-section">
+                        <input type = "file" id = "file-upload" onchange = "handleFile(this)"  accept = ".jpg, .png, .jpeg, .gif" multiple style = "display : none;">
+                    
+                        <label for = "file-upload" class = "file-button"> 
+                            <span id = "plus" style = "display : block;"> + </span>
+                            
+                            <!-- 미리보기 -->
+
+                            <img src = "" id = "preview-image" alt = "미리보기" style = "display : none;">
+                        </label>
+                    </div>
+
+                    <button class = "complete-button">
+                        완료
+                    </button>
+                    
+                </div>
+           </div>
         <!-- 오른쪽 탭 -->
         <div class = "item content-list" id = "contentList">
         </div>
@@ -60,6 +90,7 @@
     </footer>
     <script src = "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src = "js/story.js"></script>
+    <script src = "js/writeTab.js"></script>
     <script src = "js/upButton.js"></script>
 </body>
 </html>
